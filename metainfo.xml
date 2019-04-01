@@ -6,7 +6,7 @@
             <name>FLINK</name>
             <displayName>Flink</displayName>
             <comment>Apache Flink is a streaming dataflow engine that provides data distribution, communication, and fault tolerance for distributed computations over data streams.</comment>
-            <version>1.2</version>
+            <version>1.7.2</version>
             <components>
                 <component>
                   <name>FLINK_MASTER</name>
@@ -21,15 +21,52 @@
                 </component>
             </components>
             <osSpecifics>
-              <osSpecific>
-                <osFamily>redhat6</osFamily>
-                <packages>
-                   <package><name>git</name></package>    
-                   <package><name>java-1.7.0-openjdk-devel</name></package>  
-                   <package><name>apache-maven-3.2*</name></package>                                           
-                </packages>
-              </osSpecific>
-              
+                <osSpecific>
+                    <osFamily>debian7,ubuntu12,ubuntu14</osFamily>
+                    <packages>
+                      <package>
+                          <name>python2.7-dev</name>
+                      </package>
+                      <package>
+                          <name>jq</name>
+                      </package>
+                      <package>
+                          <name>curl</name>
+                      </package>
+                      <package>
+                          <name>net-tools</name>
+                      </package>
+                      <package>
+                          <name>openjdk-8-jdk</name>
+                      </package>
+                    </packages>
+                </osSpecific>
+                <osSpecific>
+                    <osFamily>redhat7,redhat6,redhat5,centos6,centos7</osFamily>
+                    <packages>
+                      <package>
+                          <name>python-devel</name>
+                      </package>
+                      <package>
+                          <name>jq</name>
+                      </package>
+                      <package>
+                          <name>curl</name>
+                      </package>
+                      <package>
+                          <name>net-tools</name>
+                      </package>
+                      <package>
+                          <name>centos-release-SCL</name>
+                      </package>
+                      <package>
+                          <name>python27</name>
+                      </package>
+                      <package>
+                          <name>java-1.8.0-openjdk</name>
+                      </package>
+                    </packages>
+                </osSpecific>
             </osSpecifics>
       	    <configuration-dependencies>
 	        	<config-type>flink-ambari-config</config-type>      	   
